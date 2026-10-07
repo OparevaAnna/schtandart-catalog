@@ -8,8 +8,9 @@ export default defineConfig({
     strictPort: false,
     host: '0.0.0.0'
   },
-  base: '/schtandart/',
+  base: '/schtandart-catalog/', 
   build: {
-    outDir: 'docs', 
+    outDir: 'docs',
+    emptyOutDir: true,
   },
 })
