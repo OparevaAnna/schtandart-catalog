@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Штандарт — Каталог объектов</title>
+  <link rel="shortcut icon" href="/data/favicon.png" type="image/png" />
+  <style>
+    /* Сайдбар скрыт по умолчанию */
+    .sidebar-overlay { display: none; }
+    .sidebar-overlay.active { display: block; }
+    .sidebar-panel {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .sidebar-panel.open {
+      transform: translateX(0);
+    }
+    @media (max-width: 767px) {
+      .sidebar-panel {
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 75vh;
+        border-radius: 1rem 1rem 0 0;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      }
+      .sidebar-panel.open {
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/schtandart/assets/index-BQrNZ1Hu.js"></script>
+  <link rel="stylesheet" crossorigin href="/schtandart/assets/index-DUTW2r17.css">
+</head>
+<body class="m-0 p-0 w-screen h-screen overflow-hidden">
+  <div id="app" class="flex w-screen h-screen">
+    <!-- Сайдбар фильтров -->
+    <aside id="sidebar" class="sidebar-panel fixed top-0 left-0 z-50 w-80 h-screen overflow-y-auto bg-white shadow-lg">
+      <div class="p-5">
+        <div class="flex items-center justify-between mb-4">
+          <button id="closeSidebar" class="p-1 rounded-full hover:bg-gray-100 text-2xl leading-none hover:text-gray-600 transition-colors md:hidden">&times;</button>
+        </div>
+        <input type="text" id="searchInput" placeholder="Поиск объектов..."
+          class="w-full px-4 py-2 border border-gray-300 rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <div id="stats" class="mb-4 text-sm text-gray-500">Показано 0 из 0 проектов</div>
+        <div id="filtersContainer"></div>
+        <button id="resetFilters"
+          class="w-full mt-4 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm transition-colors">Сбросить фильтры</button>
+      </div>
+    </aside>
+
+    <!-- Затемнение -->
+    <div id="overlay" class="sidebar-overlay fixed inset-0 bg-black/30 z-40"></div>
+
+    <!-- Кнопка гамбургер (только на десктопе) -->
+    <button id="openSidebar"
+      class="fixed top-4 left-4 z-50 w-10 h-10 max-md:hidden flex items-center justify-center bg-white rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transition-all cursor-pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#212529" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Кнопка открытия на мобилке (синяя) -->
+    <button id="openSidebarMobile"
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 z-20 md:hidden px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+      Фильтры
+    </button>
+
+    <!-- Карта -->
+    <main id="mapContainer" class="flex-1 relative w-full h-full"></main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+:root {
+    --interact-action: #eb5547;
+}
+
+.clusterer-change {
+    padding: 8px 16px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clusterer-change__section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    height: 48px;
+}
+
+.clusterer-change__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.clusterer-change__input__label {
+    font-size: 14px;
+}
+
+.clusterer-change__input {
+    max-width: 60px;
+    height: 32px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    background: rgba(92, 94, 102, 0.06);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.clusterer-change__btn {
+    border: none;
+    cursor: pointer;
+
+    width: 172px;
+    padding: 8px 16px;
+
+    color: #050d33;
+    font-size: 14px;
+    font-weight: 15;
+    background-color: rgba(92, 94, 102, 0.06);
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.clusterer-change__btn:hover {
+    background-color: rgba(92, 94, 102, 0.06);
+}
+
+.clusterer-change__btn:active {
+    background-color: rgba(92, 94, 102, 0.06);
+}
+
+.circle {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    color: var(--interact-action);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+}
+
+.circle:hover {
+    color: #2e4ce5;
+    cursor: pointer;
+}
+
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    height: 90%;
+
+    border-radius: 50%;
+    background-color: currentColor;
+
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.circle-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+}
+
+.pin {
+    transform: translate(-50%, -100%);
+}
+
+.divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(92, 94, 102, 0.1);
+    margin: 8px 0;
+}
